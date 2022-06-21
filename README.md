@@ -65,6 +65,14 @@ yarn add package-name
 yarn remove package-name
 ```
 
+- [React Documentation](https://facebook.github.io/react/index.html)
+- [React Source](https://github.com/facebook/react)
+- [React Blog](https://facebook.github.io/react/blog/)
+- [React NPM](https://www.npmjs.com/package/react)
+- [webpack Documentation](https://webpack.js.org/)
+- [Jest Documentation](https://facebook.github.io/jest/)
+- [React Router Documentation](https://reacttraining.com/react-router/)
+
 
 ## Chapter 2 : Emerging JavaScript
 ## Chapter 3 : Functional Programming with JavaScript
