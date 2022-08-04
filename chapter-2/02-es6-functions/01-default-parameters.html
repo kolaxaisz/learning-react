@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <title>Default Parameters</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<h1>Default Parameters</h1>
+<p>Open the console</p>
+<pre>
+function logActivity(name="Shane McConkey", activity="skiing") {
+    console.log( `${name} loves ${activity}` )
+}
+
+logActivity()
+
+// 2.
+var defaultPerson = {
+    name: {
+        first: "Shane",
+        last: "McConkey"
+    },
+    favActivity: "skiing"
+}
+
+function logActivity2(p=defaultPerson) {
+    console.log(`${p.name.first} loves ${p.favActivity}`)
+}
+
+logActivity2()
+</pre>
+<script type="text/babel">
+
+    function logActivity(name="Shane McConkey", activity="skiing") {
+        console.log( `${name} loves ${activity}` )
+    }
+
+    logActivity()
+
+    // 2.
+    var defaultPerson = {
+        name: {
+            first: "Shane",
+            last: "McConkey"
+        },
+        favActivity: "skiing"
+    }
+
+    function logActivity2(p=defaultPerson) {
+        console.log(`${p.name.first} loves ${p.favActivity}`)
+    }
+
+    logActivity2()
+
+</script>
+</body>
+</html>
