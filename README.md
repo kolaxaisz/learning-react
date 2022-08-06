@@ -362,13 +362,12 @@ console.log(lordify("Dave")); // ! JAVASCRIPT ERROR
 > <a id="code-02-18">**Listing 2.18** - Wrap the object you’re returning with parentheses</a>
 
 ```javascript
-  const person = (firstName, lastName) =>
-({
+const person = (firstName, lastName) => ({
   first: firstName,
   last: lastName
-        })
+})
 
-  console.log(person("Brad", "Janson"));
+console.log(person("Brad", "Janson"));
 ```
 
 ##### Arrow functions and scope
@@ -405,6 +404,14 @@ tahoe.print(); // Freel, Rose, Tallac, Rubicon, Silver
 
 ### 2.3. - Compiling JavaScript
 
+The only way to be sure that your code will work is to convert it 
+to more widely compatible code before running it in the browser. 
+This process is called compiling. One of the most popular tools for JavaScript compilation is [Babel](www.babeljs.io).
+
+Babel has made it possible to use the latest features of JavaScript right away.
+it’s transformed into syntax that can be interpreted by a wider range of browsers.
+
+- [Babel REPL](https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.18.12&externalPlugins=&assumptions=%7B%7D)
 
 ### 2.4. - Objects and Arrays
 #### 2.4.1. - Destructuring Objects
