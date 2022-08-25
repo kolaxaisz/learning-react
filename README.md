@@ -288,7 +288,7 @@ document.body.innerHTML = `
 ### 2.2. - Creating Functions
 #### 2.2.1. - Function Declarations
 
-> <a id="code-02-08">**Listing 2.8** - Function definition</a>
+> <a id="code-02-11">**Listing 2.11** - Function definition</a>
 
 ```javascript
 function logCompliment() {
@@ -303,7 +303,7 @@ Creating the function as a variable.
 
 Function declarations are hoisted and function expressions are not. In other words, you can invoke a function before you write a function declaration. You cannot invoke a function created by a function expression.
 
-> <a id="code-02-09">**Listing 2.9** - Function expression</a>
+> <a id="code-02-12">**Listing 2.12** - Function expression</a>
 
 ```javascript
 // This works!
@@ -315,7 +315,7 @@ function hey() {
 }
 ```
 
-> <a id="code-02-10">**Listing 2.10** - function expression will cause an error</a>
+> <a id="code-02-13">**Listing 2.13** - function expression will cause an error</a>
 
 ```javascript
 // Invoking the function before it's declared
@@ -329,7 +329,7 @@ const hey = function() {
 
 ##### Passing arguments
 
-> <a id="code-02-11">**Listing 2.11** - Pass named parameters to a function</a>
+> <a id="code-02-14">**Listing 2.14** - Pass named parameters to a function</a>
 
 ```javascript
 const logCompliment = function(firstName) {
@@ -339,7 +339,7 @@ const logCompliment = function(firstName) {
 logCompliment("Molly");
 ```
 
-> <a id="code-02-12">**Listing 2.12** - Pass in a dynamic value as a parameter</a>
+> <a id="code-02-15">**Listing 2.15** - Pass in a dynamic value as a parameter</a>
 
 ```javascript
 const logCompliment = function(firstName, message) {
@@ -351,7 +351,7 @@ logCompliment("Molly", "You're so cool");
 
 ##### Function returns
 
-> <a id="code-02-13">**Listing 2.13** - Add a `return` statement to this function</a>
+> <a id="code-02-16">**Listing 2.16** - Add a `return` statement to this function</a>
 
 ```javascript
 const createCompliment = function(firstName, message) {
@@ -365,19 +365,19 @@ console.log(createCompliment("You're so cool", "Molly"));
 
 #### 2.2.3. - Default Parameters
 
-1. Default Parameters ([run it](http://jsbin.com/yeqexu/1/edit?js,console))
-2. Default Parameters with Objects ([run it](http://jsbin.com/yeqexu/2/edit?js,console))
-
-> <a id="code-02-14">**Listing 2.14** - Set up default strings for the parameters `name` and `activity`</a>
+> <a id="code-02-17">**Listing 2.17** - Set up default strings for the parameters `name` and `activity` ([run it](http://jsbin.com/yeqexu/1/edit?js,console))</a>
+> - [01-default-parameters.html](chapter-2/02-es6-functions/01-default-parameters.html)
 
 ```javascript
 function logActivity(name = "Shane McConkey", activity = "skiing") {
   console.log(`${name} loves ${activity}`);
 }
+
+logActivity()
 ```
 
-> <a id="code-02-15">**Listing 2.15** - Default arguments can be any type, not just strings</a>
-
+> <a id="code-02-18">**Listing 2.18** - Default Parameters with Objects ([run it](http://jsbin.com/yeqexu/2/edit?js,console))</a>
+> - [02-default-parameters.html](chapter-2/02-es6-functions/02-default-parameters.html)
 ```javascript
 const defaultPerson = {
 name: {
@@ -394,21 +394,9 @@ function logActivity(person = defaultPerson) {
 
 #### 2.2.4. - Arrow Functions
 
-1. Regular Function
-   ([run it](http://jsbin.com/tegefa/1/edit?js,console))
-2. Arrow Function ([run it](http://jsbin.com/tegefa/2/edit?js,console))
-3. Arrow Function - Multiple Args ([run it](http://jsbin.com/tegefa/3/edit?js,console))
-4. Multiple Args - One Line ([run it](http://jsbin.com/tegefa/4/edit?js,console))
-5. Arrow Functions with if statements ❌ ([run it](http://jsbin.com/tegefa/5/edit?js,console))
-6. Arrow Functions with errors ❌ ([run it](http://jsbin.com/tegefa/6/edit?js,console))
-7. setTimeout ❌ ([run it](http://jsbin.com/tegefa/7/edit?js,console))
-8. setTimeout with .bind ([run it](http://jsbin.com/tegefa/8/edit?js,console))
-9. setTimeout with Arrow Function ([run it](http://jsbin.com/tegefa/9/edit?js,console))
-10. setTimeout with 'this' problem ❌ ([run it](http://jsbin.com/tegefa/10/edit?js,console))
-11. Showing 'this' problem ([run it](http://jsbin.com/tegefa/11/edit?js,console))
 
-
-> <a id="code-02-16">**Listing 2.16** - With arrow functions, you can create functions without using the `function` keyword</a>
+> <a id="code-02-19">**Listing 2.19** - With arrow functions, you can create functions without using the `function` keyword</a> 
+> - [01-arrows.html](chapter-2/03-arrow-functions/01-arrows.html) - Regular Function ([run it](http://jsbin.com/tegefa/1/edit?js,console))
 
 ```javascript
 const lordify = function(firstName) {
@@ -417,39 +405,83 @@ const lordify = function(firstName) {
 
 console.log(lordify("Dale")); // Dale of Canterbury
 console.log(lordify("Gail")); // Gail of Canterbury
+```
+
+> - [02-arrows.html](chapter-2/03-arrow-functions/02-arrows.html) - Arrow Function ([run it](http://jsbin.com/tegefa/2/edit?js,console))
+
+```javascript
 
 // with arrow function
 const lordify2 = firstName => `${firstName} of Canterbury`;
 
-// Arrow Function
-const lordify3 = (firstName, land) => `${firstName} of ${land}`;
+console.log( lordify("Dana") )
+console.log( lordify("Daphne") )
 
-console.log(lordify3("Don", "Piscataway")); // Don of Piscataway
-console.log(lordify3("Todd", "Schenectady")); // Todd of Schenectady
 ```
-
-> <a id="code-02-17">**Listing 2.17** - use curly braces</a>
+> - [03-arrows.html](chapter-2/03-arrow-functions/03-arrows.html) - Regular Function - Multiple Args ([run it](http://jsbin.com/tegefa/3/edit?js,console))
 
 ```javascript
-const lordify = (firstName, land) => {
+var lordify = function(firstName, land) {
+  return `${firstName} of ${land}`
+}
+
+console.log( lordify("Dale", "Maryland") )
+console.log( lordify("Daryle", "Culpeper") )
+```
+
+> - [04-arrows.html](chapter-2/03-arrow-functions/04-arrows.html) - Multiple Args - One Line ([run it](http://jsbin.com/tegefa/4/edit?js,console))
+
+```javascript
+ var lordify = (firstName, land) => `${firstName} of ${land}`
+
+    console.log( lordify("Debbie", "Texas") )
+    console.log( lordify("Daphne", "Susanville") )
+```
+
+> <a id="code-02-20">**Listing 2.20** - use curly braces</a> - Arrow Functions with if statements ❌ ([run it](http://jsbin.com/tegefa/5/edit?js,console))
+> - [05-arrows.html](chapter-2/03-arrow-functions/05-arrows.html)
+
+```javascript
+var lordify = function(firstName, land) {
+
+if (!firstName) {
+  throw new Error('A firstName is required to lordify')
+}
+
+if (!land) {
+  throw new Error('A lord must have a land')
+}
+
+return `${firstName} of ${land}`
+}
+
+console.log( lordify("Kelly", "Sonoma") )
+console.log( lordify("Dave") )
+```
+
+> - [06-arrows.html](chapter-2/03-arrow-functions/06-arrows.html) - Arrow Functions with errors ❌ ([run it](http://jsbin.com/tegefa/6/edit?js,console))
+
+```javascript
+// Arrow Function
+
+var lordify = (firstName, land) => {
+
   if (!firstName) {
-    throw new Error("A firstName is required to lordify");
+    throw new Error('A firstName is required to lordify')
   }
 
   if (!land) {
-    throw new Error("A lord must have a land");
+    throw new Error('A lord must have a land')
   }
 
-  return `${firstName} of ${land}`;
-};
+  return `${firstName} of ${land}`
+}
 
-console.log(lordify("Kelly", "Sonoma")); // Kelly of Sonoma
-console.log(lordify("Dave")); // ! JAVASCRIPT ERROR
+console.log( lordify() )
 ```
-
 ##### Returning objects
 
-> <a id="code-02-18">**Listing 2.18** - Wrap the object you’re returning with parentheses</a>
+> <a id="code-02-21">**Listing 2.21** - Wrap the object you’re returning with parentheses</a>
 
 ```javascript
 const person = (firstName, lastName) => ({
@@ -460,37 +492,59 @@ const person = (firstName, lastName) => ({
 console.log(person("Brad", "Janson"));
 ```
 
+---
+
+```javascript
+const person = (firstName, lastName) => ({
+  first: firstName,
+  last: lastName
+});
+
+console.log(person("Flad", "Hanson"));
+```
+
 ##### Arrow functions and scope
 
-> <a id="code-02-19">**Listing 2.19** - Always keeping scope in mind</a>
+> <a id="code-02-22">**Listing 2.22** - Always keeping scope in mind</a> - setTimeout ❌ ([run it](http://jsbin.com/tegefa/7/edit?js,console))
+> - [07-arrows.html](chapter-2/03-arrow-functions/07-arrows.html)
 
 ```javascript
 const tahoe = {
-mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
-print: function(delay = 1000) {
-  setTimeout(function() {
-    console.log(this.mountains.join(", "));
-  }, delay);
-}
+  mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+  print: function(delay = 1000) {
+    setTimeout(function() {
+      console.log(this.mountains.join(", "));
+    }, delay);
+  }
 };
 
 tahoe.print(); // Uncaught TypeError: Cannot read property 'join' of undefined
 
+```
 
-// Working solution:
+> - [09-arrows.html](chapter-2/03-arrow-functions/09-arrows.html)
+> - [10-arrows.html](chapter-2/03-arrow-functions/10-arrows.html)
+> - [11-arrows.html](chapter-2/03-arrow-functions/11-arrows.html)
 
+```javascript
 const tahoe = {
-mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
-print: function(delay = 1000) {
-  setTimeout(() => {
-    console.log(this.mountains.join(", "));
-  }, delay);
-}
+  mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+  print: function(delay = 1000) {
+    setTimeout(
+        () => console.log(this.mountains.join(", ")),
+        delay
+    );
+  }
 };
 
 tahoe.print(); // Freel, Rose, Tallac, Rubicon, Silver
 
 ```
+
+- setTimeout with .bind ([run it](http://jsbin.com/tegefa/8/edit?js,console))
+- setTimeout with Arrow Function ([run it](http://jsbin.com/tegefa/9/edit?js,console))
+- setTimeout with 'this' problem ❌ ([run it](http://jsbin.com/tegefa/10/edit?js,console))
+- Showing 'this' problem ([run it](http://jsbin.com/tegefa/11/edit?js,console))
 
 ### 2.3. - Compiling JavaScript
 
